@@ -28,7 +28,9 @@ There should be very little that is not in a function.
 Use the standard indentation that IDLE has.
 
 Function calls with parameters should look like thi: foo(hello,world) or foo(hello) NOT bar( hello, world ) or bar ( hello )
-print statements should be print('whatever') NOT print ('whatever')
+
+
+Print statements should be print('whatever') NOT print ('whatever')
 
 
 TODO:
