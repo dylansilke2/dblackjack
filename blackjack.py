@@ -2,9 +2,41 @@
 import random
 import pygame
 import sys
+import time
 from pygame.locals import *
 ace_str = ''
 house = 0
+
+def intro():
+    pygame.init()
+    DISPLAYSURF = pygame.display.set_mode((400,300))
+    pygame.display.set_caption("Welcome to Blackjack")
+
+    WHITE = (255, 255, 255)
+    GREEN = (0, 255, 0)
+    BLUE = (0, 0, 128)
+
+    fontObj = pygame.font.Font("freesansbold.ttf", 32)
+    textSurfaceObj = fontObj.render('Welcome to Blackjack', True, GREEN, BLUE)
+    textRectObj = textSurfaceObj.get_rect()
+    textRectObj.center = (200, 150)
+    
+
+    while (time.time() < timeout):
+        DISPLAYSURF.fill(GREEN)
+        DISPLAYSURF.blit(textSurfaceObj, textRectObj,)
+                         
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                pygame.quit()
+                sys.exit()
+
+        pygame.display.update()
+
+
+
+
+
 
 def value():
     global house
@@ -55,6 +87,175 @@ def value():
         else:
            str_card = str(card_value)
            print(str_card + " of clubs")
+
+
+def graphical():
+    
+        pygame.init()
+        DISPLAYSURF = pygame.display.set_mode((300,400))
+        pygame.display.set_caption("BlackJack")
+        POSITION = (200.0, 200.0)
+        
+        if (card_value == 1 and house == 1):
+            image = pygame.image.load('1heart.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 2 and house == 1):
+            image = pygame.image.load('2heart.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 3 and house == 1):
+            image = pygame.image.load('3heart.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 4 and house == 1):
+            image = pygame.image.load('4heart.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 5 and house == 1):
+            image = pygame.image.load('5heart.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 6 and house == 1):
+            image = pygame.image.load('6heart.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 7 and house == 1):
+            image = pygame.image.load('7heart.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 8 and house == 1):
+            image = pygame.image.load('8heart.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 9 and house == 1):
+            image = pygame.image.load('9heart.gif')
+            DISPLAYSURF.blit(image)
+        elif (card_value == 10 and house == 1):
+            image = pygame.image.load('10heart.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 1 and house == 2):
+            image = pygame.image.load('1diamonds.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 2 and house == 2):
+            image = pygame.image.load('2diamonds.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 3 and house == 2):
+            image = pygame.image.load('3diamonds.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 4 and house == 2):
+            image = pygame.image.load('4diamonds.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 5 and house == 2):
+            image = pygame.image.load('5diamonds.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 6 and house == 2):
+            image = pygame.image.load('6diamonds.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 7 and house == 2):
+            image = pygame.image.load('7diamonds.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 8 and house == 2):
+            image = pygame.image.load('8diamonds.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update() 
+        elif (card_value == 9 and house == 2):
+            image = pygame.image.load('9diamonds.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 10 and house == 2):
+            image = pygame.image.load('10diamonds.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 1 and house == 3):
+            image = pygame.image.load('1clubs.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 2 and house == 3):
+            image = pygame.image.load('2clubs.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 3 and house == 3):
+            image = pygame.image.load('3clubs.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 4 and house == 3):
+            image = pygame.image.load('4clubs.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 5 and house == 3):
+            image = pygame.image.load('5clubs.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 6 and house == 3):
+            image = pygame.image.load('6clubs.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 7 and house == 3):
+            image = pygame.image.load('7clubs.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 8 and house == 3):
+            image = pygame.image.load('8clubs.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 9 and house == 3):
+            image = pygame.image.load('9clubs.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 10 and house == 3):
+            image = pygame.image.load('10clubs.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 1 and house == 4):
+            image = pygame.image.load('1spades.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 2 and house == 4):
+            image = pygame.image.load('2spades.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 3 and house == 4):
+            image = pygame.image.load('3spades.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 4 and house == 4):
+            image = pygame.image.load('4spades.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 5 and house == 4):
+            image = pygame.image.load('5spades.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 6 and house == 4):
+            image = pygame.image.load('6spades.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 7 and house == 4):
+            image = pygame.image.load('7spades.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 8 and house == 4):
+            image = pygame.image.load('8spades.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 9 and house == 4):
+            image = pygame.image.load('9spades.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+        elif (card_value == 10 and house == 4):
+            image = pygame.image.load('1spades.gif')
+            DISPLAYSURF.blit(image, POSITION)
+            pygame.display.update()
+
 def loop():
     PlayerSum = 0
     DealerSum = 0
@@ -63,6 +264,7 @@ def loop():
         RequestDeal = input("Deal: Yes/no")
         if (RequestDeal == 'yes' or RequestDeal == 'Y' or RequestDeal == 'y' or RequestDeal == 'Yes'):
             value()
+            graphical()
             PlayerCard = card_value
             PlayerSum = PlayerSum + PlayerCard
             strPlayerSum = str(PlayerSum)
@@ -70,7 +272,8 @@ def loop():
         else:
             print("You have chosen to stand. Your current card total is " + strPlayerSum)
        
-        value() 
+        value()
+        graphical()
         print("The dealer is now being dealt cards")
         DealerCard = card_value 
         DealerSum = DealerSum + DealerCard
@@ -95,147 +298,7 @@ def loop():
 
 #-------------------Main game loop-----------------------
 
-def graphical():
-        pygame.init()
-        DISPLAYSURF = pygame.display.set_mode((400,400))
-        pygame.display.set_caption("Dylan's BlackJack")
-#main graphical loop
-        if (card_value == 1 and house == 1):
-            image = pygame.image.load('1heart.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 2 and house == 1):
-            image = pygame.image.load('2heart.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 3 and house == 1):
-            image = pygame.image.load('3heart.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 4 and house == 1):
-            image = pygame.image.load('4heart.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 5 and house == 1):
-            image = pygame.image.load('5heart.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 6 and house == 1):
-            image = pygame.image.load('6heart.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 7 and house == 1):
-            image = pygame.image.load('7heart.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 8 and house == 1):
-            image = pygame.image.load('8heart.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 9 and house == 1):
-            image = pygame.image.load('9heart.gif')
-            DISPLAYSURF.blit(image)
-        elif (card_value == 10 and house == 1):
-            image = pygame.image.load('10heart.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 1 and house == 2):
-            image = pygame.image.load('1diamonds.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 2 and house == 2):
-            image = pygame.image.load('2diamonds.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 3 and house == 2):
-            image = pygame.image.load('3diamonds.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 4 and house == 2):
-            image = pygame.image.load('4diamonds.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 5 and house == 2):
-            image = pygame.image.load('5diamonds.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 6 and house == 2):
-            image = pygame.image.load('6diamonds.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 7 and house == 2):
-            image = pygame.image.load('7diamonds.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 8 and house == 2):
-            image = pygame.image.load('8diamonds.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update() 
-        elif (card_value == 9 and house == 2):
-            image = pygame.image.load('9diamonds.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 10 and house == 2):
-            image = pygame.image.load('10diamonds.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 1 and house == 3):
-            image = pygame.image.load('1clubs.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 2 and house == 3):
-            image = pygame.image.load('2clubs.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 3 and house == 3):
-            image = pygame.image.load('3clubs.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 4 and house == 3):
-            image = pygame.image.load('4clubs.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 5 and house == 3):
-            image = pygame.image.load('5clubs.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 6 and house == 3):
-            image = pygame.image.load('6clubs.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 7 and house == 3):
-            image = pygame.image.load('7clubs.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 8 and house == 3):
-            image = pygame.image.load('8clubs.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 9 and house == 3):
-            image = pygame.image.load('9clubs.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 10 and house == 3):
-            image = pygame.image.load('10clubs.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 1 and house == 4):
-            image = pygame.image.load('1spades.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 2 and house == 4):
-            image = pygame.image.load('2spades.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 3 and house == 4):
-            image = pygame.image.load('1spades.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-        elif (card_value == 1 and house == 4):
-            image = pygame.image.load('1spades.gif')
-            DISPLAYSURF.blit(image)
-            pygame.display.update()
-            
+
             
         
          
