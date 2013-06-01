@@ -61,10 +61,13 @@ Add a special variable whichs checks them, then can easily changes the graphical
 
 
 def value():
-    global house
-    card = random.randint(1,13) 
+    global house 
     global card_value
+    global house_specials
+
+    card = random.randint(1,13)
     card_value = 1
+
     if (card == 2 or card == 3 or card == 4 or card == 5 or card == 6 or card == 8 or card == 9):
         card_value = card
     elif (card == 10 or card == 11 or card == 12 or card == 13):
