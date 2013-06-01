@@ -12,7 +12,7 @@ To test python open the python prompt and type 'import pygame'. If this works, t
 
 
 
-For Windows, download the Github for Windows, make an account and configure it.
+For Windows, download  Github for Windows, make an account and configure it.
 When you are in, search for 'dblackjack under the Github tab and then clone 'dblackjack'
 Then right-click the repository in your local tab and click  'open in explorer'.
 Make a short-cut of this folder and drag it to your desktop.
