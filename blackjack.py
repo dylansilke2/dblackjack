@@ -35,16 +35,20 @@ def intro():
     textRectObj.center = (200, 150)
     
 
-    while (time.time() < timeout):
-        DISPLAYSURF.fill(GREEN)
-        DISPLAYSURF.blit(textSurfaceObj, textRectObj,)
-                         
-        for event in pygame.event.get():
-            if event.type == QUIT:
-                pygame.quit()
-                sys.exit()
+    while True:
+            DISPLAYSURF.fill(GREEN)
+            DISPLAYSURF.blit(textSurfaceObj, textRectObj,)
+            
+        #Main game loop
+            loop()
+        #Main game loop
+        
+            for event in pygame.event.get():
+                 if event.type == QUIT:
+                     pygame.quit()
+                     sys.exit()
 
-        pygame.display.update()
+            pygame.display.update()
 
 
 """
