@@ -15,7 +15,7 @@ house = 0
 
 """
 intro() inits the GUI and adds a very basic Welcome screen. It also keeps-alive the display.
-It takes no arguemeents and no variables are global
+It takes no arguements and no variables are global
 This will be run first.
 It needs to timeout after a few seconds and the gameboard and cards to load instead.
 """
@@ -54,11 +54,6 @@ def intro():
 """
 Values decides the numerical value of the card based on a random number generation.
 It supports Aces, which are decided by the player.
-However it's support for special cards, such as the Jack, King and Queen are sadly lacking because
-they are assigned 10, which means graphical() doesn't support these cards
-
-NEEDS TO BE FIXED:
-Add a special variable whichs checks them, then can easily changes the graphical()
 
 """
 
