@@ -63,6 +63,7 @@ def value():
     global house 
     global card_value
     global house_specials
+    
 
     card = random.randint(1,13)
     card_value = 1
@@ -83,7 +84,7 @@ def value():
              error_ace = int(error_ace_str)
              card_value = error_ace
     house = random.randint(1,4)
-    house_specials = random.randint(1,4)
+    house_specials = random.randint(1,3)
     name = '_'
     if (card_value == 10):
        if (house_specials == 1):
@@ -92,12 +93,10 @@ def value():
        elif (house_specials == 2):
            card_sp = 'Queen'
            print(card_sp)
-       elif (house_specials == 3):
-           card_sp = 'Jack'
-           print(card_sp)
        else:
            card_sp = 'Jack'
            print(card_sp)
+      
     else:
         if (house == 1):
             str_card = str(card_value)
