@@ -30,26 +30,26 @@ def intro():
     BLUE = (0, 0, 128)
 
     fontObj = pygame.font.Font("freesansbold.ttf", 32)
+    font2Obj = pygame.font.Font("freesansbold.ttf", 14)
+    textSurface2Obj = font2Obj
+    
+    font2Obj.render("Press enter to continue", True, GREEN, BLUE)
     textSurfaceObj = fontObj.render('Welcome to Blackjack', True, GREEN, BLUE)
     textRectObj = textSurfaceObj.get_rect()
     textRectObj.center = (200, 150)
-    
-
-    while True:
+    ContinueGame = 'not empty'
+    while ContinueGame != '':
             DISPLAYSURF.fill(GREEN)
             DISPLAYSURF.blit(textSurfaceObj, textRectObj,)
             
-        #Main game loop
-            loop()
-        #Main game loop
-        
+       
             for event in pygame.event.get():
                  if event.type == QUIT:
                      pygame.quit()
                      sys.exit()
-
+                    
             pygame.display.update()
-
+            ContinueGame = input("Press enter to continue")
 
 """
 Values decides the numerical value of the card based on a random number generation.
@@ -114,10 +114,10 @@ def value():
 
 def graphical():
     
-        pygame.init()
-        DISPLAYSURF = pygame.display.set_mode((300,400))
-        pygame.display.set_caption("BlackJack")
-        POSITION = (200.0, 200.0)
+       pygame.init()
+       DISPLAYSURF = pygame.display.set_mode((300,400))
+       pygame.display.set_caption("BlackJack")
+       POSITION = (200.0, 200.0)
         
        if (card_value == 1 and house == 1):
             image = pygame.image.load('1heart.gif')
@@ -154,19 +154,19 @@ def graphical():
        elif (card_value == 9 and house == 1):
             image = pygame.image.load('9heart.gif')
             DISPLAYSURF.blit(image)
-       elif (card_value == 10 and house == 1 and house_specials = 1): #needs editing
+       elif (card_value == 10 and house == 1 and house_specials == 1): #needs editing
             image = pygame.image.load('10heart.gif')
             DISPLAYSURF.blit(image, POSITION)
             pygame.display.update()
-       elif (card_value == 10 and house == 1 and house_specials = 1): #needs editing
+       elif (card_value == 10 and house == 1 and house_specials == 1): #needs editing
             image = pygame.image.load('10heart.gif')
             DISPLAYSURF.blit(image, POSITION)
             pygame.display.update()
-       elif (card_value == 10 and house == 1 and house_specials = 2): #needs editing
+       elif (card_value == 10 and house == 1 and house_specials == 2): #needs editing
             image = pygame.image.load('11heart.gif')
             DISPLAYSURF.blit(image, POSITION)
             pygame.display.update()
-       elif (card_value == 10 and house == 1 and house_specials = 3): #needs editing
+       elif (card_value == 10 and house == 1 and house_specials == 3): #needs editing
             image = pygame.image.load('12heart.gif')
             DISPLAYSURF.blit(image, POSITION)
             pygame.display.update()
@@ -335,7 +335,8 @@ Change all the CLI outputs to GUI outputs with pygame.
 def loop():
     PlayerSum = 0
     DealerSum = 0
-    while PlayerSum < 21:
+    intro()
+    while (PlayerSum < 21 and DealerSum < 21):
         strPlayerSum = ''
         RequestDeal = input("Deal: Yes/no")
         if (RequestDeal == 'yes' or RequestDeal == 'Y' or RequestDeal == 'y' or RequestDeal == 'Yes'):
@@ -347,10 +348,9 @@ def loop():
             print("Your current card total is " + strPlayerSum)
         else:
             print("You have chosen to stand. Your current card total is " + strPlayerSum)
-       
+        print("The dealer is now being dealt cards")
         value()
         graphical()
-        print("The dealer is now being dealt cards")
         DealerCard = card_value 
         DealerSum = DealerSum + DealerCard
         strDealer = str(DealerSum)
@@ -370,7 +370,7 @@ def loop():
     else:
         print("Thanks for playing. Send all your money to dylansilke@gmail.com")
 #------------------Main game loop------------------------
-#loop()
+loop()
 
 #-------------------Main game loop-----------------------
 
