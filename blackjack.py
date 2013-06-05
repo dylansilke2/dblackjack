@@ -117,12 +117,15 @@ def graphical():
        pygame.init()
        DISPLAYSURF = pygame.display.set_mode((300,400))
        pygame.display.set_caption("BlackJack")
-       POSITION = (200.0, 200.0)
+       POSITION = (0.0,0.0)
         
        if (card_value == 1 and house == 1):
             image = pygame.image.load('1heart.gif')
-            DISPLAYSURF.blit(image, POSITION)
+            resize = pygame.transform.scale(image, (300,400))
+            DISPLAYSURF.blit(resize, POSITION)
             pygame.display.update()
+
+
        elif (card_value == 2 and house == 1):
             image = pygame.image.load('2heart.gif')
             DISPLAYSURF.blit(image, POSITION)
@@ -314,12 +317,12 @@ def graphical():
        elif (card_value == 10 and house == 4 and house_specials == 2):
             image = pygame.image.load('11spades.gif')
             DISPLAYSURF.blit(image, POSITION)
-            pygame.display.update()
-       elif (card_value == 10 and house == 4 and house_specials == 3):
+            pygame.display.update() 
+       else:
             image = pygame.image.load('12spades.gif')
+            resize = pygame.image.transform.scale(image, (300,400))
             DISPLAYSURF.blit(image, POSITION)
             pygame.display.update()
-
 
 
 """
