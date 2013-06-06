@@ -121,11 +121,8 @@ def graphical():
         
        if (card_value == 1 and house == 1):
             image = pygame.image.load('1heart.gif')
-            resize = pygame.transform.scale(image, (300,400))
-            DISPLAYSURF.blit(resize, POSITION)
+            DISPLAYSURF.blit(image, POSITION)
             pygame.display.update()
-
-
        elif (card_value == 2 and house == 1):
             image = pygame.image.load('2heart.gif')
             DISPLAYSURF.blit(image, POSITION)
@@ -262,15 +259,15 @@ def graphical():
             image = pygame.image.load('9clubs.gif')
             DISPLAYSURF.blit(image, POSITION)
             pygame.display.update()        
-       elif (card_value == 10 and house == 3 and house_specials == 1): #needs fixing
+       elif (card_value == 10 and house == 3 and house_specials == 1): 
             image = pygame.image.load('10clubs.gif')
             DISPLAYSURF.blit(image, POSITION)
             pygame.display.update()
-       elif (card_value == 10 and house == 3 and house_specials == 2): #needs fixing
+       elif (card_value == 10 and house == 3 and house_specials == 2): 
             image = pygame.image.load('11clubs.gif')
             DISPLAYSURF.blit(image, POSITION)
             pygame.display.update()
-       elif (card_value == 10 and house == 3 and house_specials == 3): #needs fixing
+       elif (card_value == 10 and house == 3 and house_specials == 3): 
             image = pygame.image.load('12clubs.gif')
             DISPLAYSURF.blit(image, POSITION)
             pygame.display.update()
@@ -320,7 +317,6 @@ def graphical():
             pygame.display.update() 
        else:
             image = pygame.image.load('12spades.gif')
-            resize = pygame.image.transform.scale(image, (300,400))
             DISPLAYSURF.blit(image, POSITION)
             pygame.display.update()
 
@@ -339,6 +335,7 @@ def loop():
     PlayerSum = 0
     DealerSum = 0
     intro()
+    WinCount = 0
     while (PlayerSum < 21 and DealerSum < 21):
         strPlayerSum = ''
         RequestDeal = input("Deal: Yes/no")
@@ -352,19 +349,18 @@ def loop():
         else:
             print("You have chosen to stand. Your current card total is " + strPlayerSum)
         print("The dealer is now being dealt cards")
-        value()
-        graphical()
-        DealerCard = card_value 
-        DealerSum = DealerSum + DealerCard
-        strDealer = str(DealerSum)
-        DealerValue = DealerSum
-        print("The dealers card total is " + strDealer)
-        if DealerSum > 21:
-                print("The dealer has gone over. You win.")
-        else: continue
-        
-    if (PlayerSum == 21):
-        print("You have hit 21!!!!!")
+        if (DealerSum < 21 and PlayerSum < 21):
+            value()
+            graphical()
+            DealerCard = card_value 
+            DealerSum = DealerSum + DealerCard
+            strDealer = str(DealerSum)
+            DealerValue = DealerSum
+            print("The dealers card total is " + strDealer)
+        else:
+            break
+    if (PlayerSum == 21 and DealerSum != 21):
+        print("You have won")
     else:
         play_again = 'Yes'
         play_again = input("You went over. Do you want to play again? Yes/no")
