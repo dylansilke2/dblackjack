@@ -1,13 +1,10 @@
+
 #black jack
 import random
 import pygame
 import sys
 import time
 from pygame.locals import *
-
-
-
-
 
 ace_str = ''
 house = 0
@@ -154,19 +151,19 @@ def graphical():
        elif (card_value == 9 and house == 1):
             image = pygame.image.load('9heart.gif')
             DISPLAYSURF.blit(image)
-       elif (card_value == 10 and house == 1 and house_specials == 1): #needs editing
+       elif (card_value == 10 and house == 1 and house_specials == 1): 
             image = pygame.image.load('10heart.gif')
             DISPLAYSURF.blit(image, POSITION)
             pygame.display.update()
-       elif (card_value == 10 and house == 1 and house_specials == 1): #needs editing
+       elif (card_value == 10 and house == 1 and house_specials == 1): 
             image = pygame.image.load('10heart.gif')
             DISPLAYSURF.blit(image, POSITION)
             pygame.display.update()
-       elif (card_value == 10 and house == 1 and house_specials == 2): #needs editing
+       elif (card_value == 10 and house == 1 and house_specials == 2): 
             image = pygame.image.load('11heart.gif')
             DISPLAYSURF.blit(image, POSITION)
             pygame.display.update()
-       elif (card_value == 10 and house == 1 and house_specials == 3): #needs editing
+       elif (card_value == 10 and house == 1 and house_specials == 3): 
             image = pygame.image.load('12heart.gif')
             DISPLAYSURF.blit(image, POSITION)
             pygame.display.update()
@@ -211,15 +208,15 @@ def graphical():
             image = pygame.image.load('9diamonds.gif')
             DISPLAYSURF.blit(image, POSITION)
             pygame.display.update()
-       elif (card_value == 10 and house == 2 and house_specials == 1): #needs fixing
+       elif (card_value == 10 and house == 2 and house_specials == 1): 
             image = pygame.image.load('10diamonds.gif')
             DISPLAYSURF.blit(image, POSITION)
             pygame.display.update()
-       elif (card_value == 10 and house == 2 and house_specials == 2): #needs fixing
+       elif (card_value == 10 and house == 2 and house_specials == 2): 
             image = pygame.image.load('11diamonds.gif')
             DISPLAYSURF.blit(image, POSITION)
             pygame.display.update()
-       elif (card_value == 10 and house == 2 and house_specials == 3): #needs fixing
+       elif (card_value == 10 and house == 2 and house_specials == 3): 
             image = pygame.image.load('12diamonds.gif')
             DISPLAYSURF.blit(image, POSITION)
             pygame.display.update()
@@ -334,8 +331,10 @@ Change all the CLI outputs to GUI outputs with pygame.
 def loop():
     PlayerSum = 0
     DealerSum = 0
-    intro()
     WinCount = 0
+    
+    intro()
+
     while (PlayerSum < 21 and DealerSum < 21):
         strPlayerSum = ''
         RequestDeal = input("Deal: Yes/no")
@@ -358,16 +357,18 @@ def loop():
             DealerValue = DealerSum
             print("The dealers card total is " + strDealer)
         else:
-            break
-    if (PlayerSum == 21 and DealerSum != 21):
-        print("You have won")
-    else:
-        play_again = 'Yes'
-        play_again = input("You went over. Do you want to play again? Yes/no")
-    if (play_again == 'Yes' or play_again == 'y' or play_again == "yes" or play_again == 'Yes'):
-        loop()
-    else:
-        print("Thanks for playing. Send all your money to dylansilke@gmail.com")
+            
+            if (PlayerSum == 21 and DealerSum != 21):
+                print("You have won")
+            elif (DealerSum == 21 and PlayerSum != 21):
+                print("The dealer has won.")
+            else:
+                play_again = 'Yes'
+                play_again = input("You went over. Do you want to play again? Yes/no")
+            if (play_again == 'Yes' or play_again == 'y' or play_again == "yes" or play_again == 'Yes'):
+                loop()
+            else:
+                print("Thanks for playing. Send all your money to dylansilke@gmail.com")
 #------------------Main game loop------------------------
 loop()
 
